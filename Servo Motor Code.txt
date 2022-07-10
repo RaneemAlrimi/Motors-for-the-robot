@@ -1,0 +1,22 @@
+//Servo Motor Code
+#include<Servo.h>
+Servo Myservo;
+int i = 0; 
+void setup()
+{
+  Myservo.attach(7);
+}
+
+void loop()
+{
+ for (i=0; i<=180 ;i++)
+ {
+   Myservo.write(i);
+   delay(15);
+ }
+  for(i=180; i>=0 ;i--)
+  {
+    Myservo.write(i);
+    delay(15);
+  }
+}
