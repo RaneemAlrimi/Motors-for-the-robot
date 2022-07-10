@@ -1,0 +1,71 @@
+//The DC Brushless Motor
+int r1=8;
+int l1=9;
+int r2=12;
+int l2=13;
+
+void setup()
+{
+  pinMode(8, OUTPUT);
+  pinMode(9, OUTPUT);
+  pinMode(12, OUTPUT);
+  pinMode(13, OUTPUT);
+}
+
+void forward()
+{
+  digitalWrite(r1, HIGH);
+  digitalWrite(l1, LOW);
+  digitalWrite(r2, LOW);
+  digitalWrite(l2, HIGH);
+}
+
+void backward()
+{
+  digitalWrite(r1, 0);
+  digitalWrite(l1, 1);
+  digitalWrite(r2, 1);
+  digitalWrite(l2, 0);
+}
+
+void right()
+{
+  digitalWrite(r1, HIGH);
+  digitalWrite(l1, LOW);
+  digitalWrite(r2, HIGH);
+  digitalWrite(l2, LOW);
+}
+
+void left()
+{
+  digitalWrite(r1, LOW);
+  digitalWrite(l1, HIGH);
+  digitalWrite(r2, LOW);
+  digitalWrite(l2, HIGH);
+}
+
+void stopMoving(){
+  digitalWrite(r1, 0);
+  digitalWrite(l1, 0);
+  digitalWrite(r2, 0);
+  digitalWrite(l2, 0);
+}
+void loop()
+{
+  forward();
+  delay(1000);// Wait for 1000 millisecond(s)
+  stopMoving();
+  delay(500);
+  left();
+  delay(1000);
+  stopMoving();
+  delay(500);
+  backward();
+  delay(500);
+  stopMoving();
+  delay(500);
+  right();
+  delay(1000);
+  stopMoving();
+  delay(500);
+  
